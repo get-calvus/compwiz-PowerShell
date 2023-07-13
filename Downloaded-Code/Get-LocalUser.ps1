@@ -148,7 +148,7 @@ Function Get-LocalUser {
                 }
                 else {
                     Write-Verbose "Filtering for user objects"
-                    $users = $computer.psbase.children | where {$_.SchemaClassName -match "user"}
+                    $users = $computer.psbase.children | Where-Object {$_.SchemaClassName -match "user"}
                     Write-Verbose "Found $($users.count) users"
                 }
 
